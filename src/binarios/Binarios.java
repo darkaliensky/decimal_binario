@@ -16,8 +16,8 @@ public class Binarios {
      */
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
-        int numero,n=0;
-        String seguir = "";
+        int numero,n;
+        String seguir;
         
         do{
             String binario = "", binariofinal="";
