@@ -17,17 +17,24 @@ public class Binarios {
     public static void main(String[] args) {
         Scanner leer = new Scanner(System.in);
         int numero,n;
-        String seguir;
+        String seguir="";
         
         do{
             String binario = "", binariofinal="";
             System.out.println("Ingrese un número entre 0 y 255 para convertirlo en base binario de 8-bits");
-            numero = leer.nextInt();
-            while(numero < 0 || numero > 255){
+            try{
+                numero = leer.nextInt();
+            
+                while(numero < 0 || numero > 255){
                 System.out.println("Ingrese un número válido (Entre 0 y 255)");
                 numero = leer.nextInt();
             }
+            }
+            catch(Exception e){
+                System.out.println("Ha ingresado un carácter no válido, recuerde que debe ingresar un entero");
+            }
             n = numero;
+            
             for(int i=0;i<8;i++){
                 if(numero%2 == 0){
                     binario = binario + "0";
@@ -44,7 +51,8 @@ public class Binarios {
             System.out.println("¿Desea continuar usando el programa? (Si o No)");
             seguir = leer.next();
             
-            }while(seguir.equals("si") || seguir.equals("SI") || seguir.equals("Si"));
+            
+        }while(seguir.equals("si") || seguir.equals("SI") || seguir.equals("Si"));
             
     }
     
